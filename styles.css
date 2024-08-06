@@ -132,3 +132,41 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+
+/* Mobile Style */
+
+#skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+body {
+    background: var(--white);
+    background: linear-gradient(0deg, var(--white) 95%, var(--teal) 100%);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr 2fr;
+    grid-template-areas: "logo nav nav" "head head head" "text text text";
+}
+
+#logo {
+    grid-area: logo;
+    place-self: center;
+}
+
+#logo img {
+    max-width: 100%;
+}
+
+nav {
+    grid-area: nav;
+    place-self: stretch;
+}
