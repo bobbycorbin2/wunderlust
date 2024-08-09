@@ -1,313 +1,803 @@
-/* Bobby Corbin */
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-
-/* HTML5 display-role reset for older browsers */
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-body {
-    line-height: 1;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-
-/* Fonts */
-
-@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
-:root {
-    --yellow: #F6D64A;
-    --teal: #55BCD5;
-    --purple: #9B26B0;
-    --blue: #499BD2;
-    --dark-gray: #222222;
-    --light-gray: #EAEAEA;
-    --white: #FFFFFF;
-    --black: #000000;
-}
-
-
-/* Mobile Style */
-
-#skip {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-#skip:focus {
-    position: static;
-    width: auto;
-    height: auto;
-}
-
-.sr-only {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-h1,
-h2,
-h3 {
-    font-family: "Molle", sans-serif;
-    font-size: 2.5em;
-}
-
-header {
-    display: grid;
-    background: linear-gradient(#55BCD5, #FFFFFF);
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 3fr 1fr 2fr;
-}
-
-header nav {
-    grid-column: 2/2;
-    grid-row: 2/-1;
-}
-
-header p {
-    position: relative;
-    margin: 5px 30px;
-    font-size: 1.5rem;
-    line-height: normal;
-}
-
-h1 {
-    margin-left: 40px;
-    font-size: 3rem;
-}
-
-h2 {
-    margin-left: 40px;
-    margin-top: 10px;
-}
-
-h3 {
-    margin-left: 30px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-body {
-    background: var(--white);
-    background: linear-gradient(0deg, var(--white) 92%, var(--teal) 100%);
-}
-
-#logo {
-    grid-area: logo;
-    place-self: center;
-}
-
-#logo img {
-    max-width: 100%;
-}
-
-nav {
-    grid-area: nav;
-    place-self: stretch;
-}
-
-
-/*Testimonials*/
-
-#testimonials h3 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-}
-
-#testimonials section {
-    display: grid;
-    grid-template-rows: auto repeat(3, auto);
-    grid-template-columns: auto;
-}
-
-#testimonials img {
-    width: 40vw;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media screen and (min-width: 768px) {
-    h1 {
-        grid-row: 1;
-        grid-column: 2;
-        padding-top: 20px;
-        margin-left: -150px;
-    }
-    header p {
-        grid-row: 1;
-        grid-column: 2;
-        padding-top: 80px;
-        margin-left: -150px;
-    }
-    nav label {
-        display: none;
-    }
-    nav {
-        grid-column: 1/-1;
-    }
-    li a {
-        display: grid;
-        grid-template-rows: 3;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        overflow: visible;
-        position: absolute;
-    }
-    #img-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-template-rows: 2;
-        gap: 10px;
-    }
-    #img-grid img:first-of-type {
-        grid-column: 1;
-        grid-row: 1;
-    }
-    #img-grid img:last-of-type {
-        grid-column: 2;
-        grid-row: 1;
-    }
-    #img-grid picture {
-        grid-row: 2;
-        grid-column: 1 / span 2;
-    }
-    footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    footer a {
-        grid-column: 2;
-    }
-    footer a:last-of-type {
-        grid-column: 3;
-    }
-}
+                                                    /* Bobby Corbin */
+                                                    
+                                                    html,
+                                                    body,
+                                                    div,
+                                                    span,
+                                                    applet,
+                                                    object,
+                                                    iframe,
+                                                    h1,
+                                                    h2,
+                                                    h3,
+                                                    h4,
+                                                    h5,
+                                                    h6,
+                                                    p,
+                                                    blockquote,
+                                                    pre,
+                                                    a,
+                                                    abbr,
+                                                    acronym,
+                                                    address,
+                                                    big,
+                                                    cite,
+                                                    code,
+                                                    del,
+                                                    dfn,
+                                                    em,
+                                                    img,
+                                                    ins,
+                                                    kbd,
+                                                    q,
+                                                    s,
+                                                    samp,
+                                                    small,
+                                                    strike,
+                                                    strong,
+                                                    sub,
+                                                    sup,
+                                                    tt,
+                                                    var,
+                                                    b,
+                                                    u,
+                                                    i,
+                                                    center,
+                                                    dl,
+                                                    dt,
+                                                    dd,
+                                                    ol,
+                                                    ul,
+                                                    li,
+                                                    fieldset,
+                                                    form,
+                                                    label,
+                                                    legend,
+                                                    table,
+                                                    caption,
+                                                    tbody,
+                                                    tfoot,
+                                                    thead,
+                                                    tr,
+                                                    th,
+                                                    td,
+                                                    article,
+                                                    aside,
+                                                    canvas,
+                                                    details,
+                                                    embed,
+                                                    figure,
+                                                    figcaption,
+                                                    footer,
+                                                    header,
+                                                    hgroup,
+                                                    menu,
+                                                    nav,
+                                                    output,
+                                                    ruby,
+                                                    section,
+                                                    summary,
+                                                    time,
+                                                    mark,
+                                                    audio,
+                                                    video {
+                                                        margin: 0;
+                                                        padding: 0;
+                                                        border: 0;
+                                                        font-size: 100%;
+                                                        font: inherit;
+                                                        vertical-align: baseline;
+                                                    }
+                                                    /* HTML5 display-role reset for older browsers */
+                                                    
+                                                    article,
+                                                    aside,
+                                                    details,
+                                                    figcaption,
+                                                    figure,
+                                                    footer,
+                                                    header,
+                                                    hgroup,
+                                                    menu,
+                                                    nav,
+                                                    section {
+                                                        display: block;
+                                                    }
+                                                    
+                                                    body {
+                                                        line-height: 1;
+                                                    }
+                                                    
+                                                    ol,
+                                                    ul {
+                                                        list-style: none;
+                                                    }
+                                                    
+                                                    blockquote,
+                                                    q {
+                                                        quotes: none;
+                                                    }
+                                                    
+                                                    blockquote:before,
+                                                    blockquote:after,
+                                                    q:before,
+                                                    q:after {
+                                                        content: '';
+                                                        content: none;
+                                                    }
+                                                    
+                                                    table {
+                                                        border-collapse: collapse;
+                                                        border-spacing: 0;
+                                                    }
+                                                    /* Fonts */
+                                                    
+                                                    @import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+                                                     :root {
+                                                        font-family: "Montserrat", "Molle", sans-serif;
+                                                        --fancyfont: "Molle";
+                                                        --regfont: "Montserrat";
+                                                        --yellow: #F6D64A;
+                                                        --teal: #55BCD5;
+                                                        --purple: #9B26B0;
+                                                        --blue: #499BD2;
+                                                        --dark-gray: #222222;
+                                                        --light-gray: #EAEAEA;
+                                                        --white: #FFFFFF;
+                                                        --black: #000000;
+                                                    }
+                                                    /* Mobile Style */
+                                                    
+                                                    #skip {
+                                                        position: absolute;
+                                                        left: -10000px;
+                                                        top: auto;
+                                                        width: 1px;
+                                                        height: 1px;
+                                                        overflow: hidden;
+                                                    }
+                                                    
+                                                    #skip:focus {
+                                                        position: static;
+                                                        width: auto;
+                                                        height: auto;
+                                                    }
+                                                    
+                                                    .sr-only {
+                                                        position: absolute;
+                                                        left: -10000px;
+                                                        top: auto;
+                                                        width: 1px;
+                                                        height: 1px;
+                                                        overflow: hidden;
+                                                    }
+                                                    
+                                                    body {
+                                                        background: var(--white);
+                                                        background: linear-gradient(0deg, var(--white) 92%, var(--teal) 100%);
+                                                    }
+                                                    
+                                                    header {
+                                                        display: grid;
+                                                        background: linear-gradient(#55BCD5, #FFFFFF);
+                                                        grid-template-areas: "logo nav nav" "head head head" "text text text";
+                                                        grid-template-columns: 2fr 1fr 1fr;
+                                                        grid-template-rows: 3fr 1fr 2fr;
+                                                    }
+                                                    
+                                                    header p {
+                                                        position: relative;
+                                                        margin: 5px 30px;
+                                                        font-size: 1.5rem;
+                                                        line-height: normal;
+                                                    }
+                                                    
+                                                    h1 {
+                                                        margin-left: 40px;
+                                                        font-size: 3rem;
+                                                    }
+                                                    
+                                                    h2 {
+                                                        margin-left: 40px;
+                                                        margin-top: 10px;
+                                                    }
+                                                    
+                                                    h3 {
+                                                        margin-left: 30px;
+                                                        margin-top: 10px;
+                                                        margin-bottom: 20px;
+                                                    }
+                                                    
+                                                    #logo {
+                                                        grid-area: logo;
+                                                        place-self: center;
+                                                    }
+                                                    
+                                                    #logo img {
+                                                        max-width: 60%;
+                                                    }
+                                                    
+                                                    nav {
+                                                        grid-area: nav;
+                                                        place-self: stretch;
+                                                    }
+                                                    
+                                                    #menu-toggle {
+                                                        width: 50%;
+                                                        list-style: none;
+                                                        position: auto;
+                                                        margin-top: 3vh;
+                                                        padding: 1rem;
+                                                        color: black;
+                                                        background: var(--yellow);
+                                                        font-family: var(--regfont);
+                                                        font-weight: 700;
+                                                    }
+                                                    
+                                                    #menu-toggle ul {
+                                                        display: none;
+                                                    }
+                                                    
+                                                    #menu-toggle input[type=checkbox] {
+                                                        display: none;
+                                                    }
+                                                    
+                                                    #menu-toggle a {
+                                                        text-decoration: none;
+                                                        font-family: var(--regfont);
+                                                    }
+                                                    /* Main */
+                                                    
+                                                    h1 {
+                                                        grid-area: head;
+                                                        font-family: var(--fancyfont);
+                                                        font-size: 2rem;
+                                                        /* padding-left: 6vw; */
+                                                        place-self: center start;
+                                                    }
+                                                    
+                                                    header p {
+                                                        grid-area: text;
+                                                        font-family: var(--regfont);
+                                                        font-size: 1.2rem;
+                                                        margin: 0 4vw;
+                                                    }
+                                                    
+                                                    #intro h2 {
+                                                        font-family: var(--fancyfont);
+                                                        font-size: 3rem;
+                                                        padding-left: 6vw;
+                                                    }
+                                                    
+                                                    #intro p {
+                                                        font-family: var(--regfont);
+                                                        font-size: 1.5rem;
+                                                        line-height: 150%;
+                                                        margin: 0 4vw;
+                                                        padding-bottom: 1vh;
+                                                    }
+                                                    
+                                                    #img-grid {
+                                                        display: grid;
+                                                        grid-template-columns: auto;
+                                                        grid-template-rows: repeat(4, auto);
+                                                        width: 100%;
+                                                        gap: 5px;
+                                                        padding-bottom: 10px;
+                                                    }
+                                                    
+                                                    #img-grid img {
+                                                        width: 100%;
+                                                    }
+                                                    /* Plan */
+                                                    
+                                                    #plan {
+                                                        width: 100%;
+                                                        background-color: var(--yellow);
+                                                        padding: 25px 0px 25px 0px;
+                                                    }
+                                                    
+                                                    #plan div {
+                                                        display: grid;
+                                                        grid-template-columns: auto;
+                                                        grid-template-rows: repeat(4, auto);
+                                                        gap: 4px;
+                                                    }
+                                                    
+                                                    #plan div section {
+                                                        display: grid;
+                                                        grid-template-columns: 1fr;
+                                                        grid-template-rows: auto;
+                                                        place-self: center;
+                                                        background-color: var(--teal);
+                                                        border: 4px var(--white) solid;
+                                                        padding: 2vb;
+                                                        width: 35vh;
+                                                    }
+                                                    
+                                                    #plan h3 {
+                                                        font-family: var(--fancyfont);
+                                                        font-size: 2rem;
+                                                        text-align: center;
+                                                    }
+                                                    
+                                                    #plan h4 {
+                                                        text-align: center;
+                                                        font-variant-caps: all-small-caps;
+                                                        font-size: 2rem;
+                                                        font-weight: 900;
+                                                        padding-bottom: 3vh;
+                                                    }
+                                                    /* Testimonials */
+                                                    
+                                                    #testimonials section {
+                                                        display: grid;
+                                                        grid-template-rows: auto repeat(3, auto);
+                                                        grid-template-columns: auto;
+                                                    }
+                                                    
+                                                    #testimonials h3 {
+                                                        font-family: var(--fancyfont);
+                                                        font-size: 2.5rem;
+                                                        font-weight: 400;
+                                                        text-align: left;
+                                                    }
+                                                    
+                                                    #testimonials h4 {
+                                                        font-variant-caps: all-small-caps;
+                                                        text-align: center;
+                                                        font-size: 3rem;
+                                                        font-weight: 550;
+                                                    }
+                                                    
+                                                    #testimonials img {
+                                                        width: auto;
+                                                        margin: auto;
+                                                    }
+                                                    
+                                                    #testimonials p {
+                                                        text-align: center;
+                                                        font-size: 1.2rem;
+                                                        padding-bottom: 1vh;
+                                                    }
+                                                    
+                                                    #testimonials q {
+                                                        font-style: italic;
+                                                        font-size: 1.1rem;
+                                                        text-align: center;
+                                                        padding-bottom: 7px;
+                                                        margin: 0 40px;
+                                                    }
+                                                    
+                                                    #testimonials q:before {
+                                                        content: "“";
+                                                    }
+                                                    
+                                                    #testimonials q:after {
+                                                        content: "“";
+                                                    }
+                                                    /* About */
+                                                    
+                                                    #about {
+                                                        background-color: var(--blue);
+                                                        color: var(--black);
+                                                    }
+                                                    
+                                                    #about section {
+                                                        display: grid;
+                                                        grid-template-columns: auto;
+                                                        grid-template-rows: auto;
+                                                    }
+                                                    
+                                                    #about div {
+                                                        display: grid;
+                                                        grid-template-columns: auto auto;
+                                                        grid-template-rows: auto auto;
+                                                    }
+                                                    
+                                                    #about h3 {
+                                                        font-family: var(--fancyfont);
+                                                        font-size: 2.3rem;
+                                                        text-align: auto;
+                                                        padding: 5vw 3vh;
+                                                    }
+                                                    
+                                                    #about h4 {
+                                                        font-family: var(--regfont);
+                                                        font-variant-caps: all-small-caps;
+                                                        font-size: 1.5rem;
+                                                        font-weight: 700;
+                                                        text-align: center;
+                                                    }
+                                                    
+                                                    #about p {
+                                                        font-family: var(--regfont);
+                                                        text-align: center;
+                                                    }
+                                                    
+                                                    #about img {
+                                                        width: 50%;
+                                                        padding-bottom: 1vw;
+                                                        place-self: center;
+                                                    }
+                                                    /* Contact */
+                                                    
+                                                    #contact {
+                                                        padding: 30px;
+                                                    }
+                                                    
+                                                    #contact div {
+                                                        display: grid;
+                                                        grid-template-columns: 1fr;
+                                                        margin: 30px;
+                                                    }
+                                                    
+                                                    #contact h3 {
+                                                        font-family: var(--fancyfont);
+                                                        font-size: 2rem;
+                                                        text-align: auto;
+                                                    }
+                                                    
+                                                    #contact .form-required {
+                                                        font-family: var(--regfont);
+                                                        font-size: 1rem;
+                                                        padding-left: 10px;
+                                                    }
+                                                    
+                                                    #contact label,
+                                                    #nums {
+                                                        font-family: var(--regfont);
+                                                        font-size: 1.3rem;
+                                                        font-variant-caps: all-small-caps;
+                                                        font-weight: 700;
+                                                        line-height: 1.3;
+                                                    }
+                                                    
+                                                    #contact input,
+                                                    #destination,
+                                                    #travelTime {
+                                                        display: block;
+                                                        font-family: var(--regfont);
+                                                        width: auto;
+                                                        padding: 1em 1em;
+                                                        background-color: var(--white);
+                                                        border: 3px var(--purple) solid;
+                                                    }
+                                                    
+                                                    fieldset {
+                                                        display: grid;
+                                                        grid-template-columns: 1fr;
+                                                        grid-template-rows: auto auto auto;
+                                                        place-content: auto;
+                                                    }
+                                                    
+                                                    #contact fieldset label {
+                                                        display: grid;
+                                                        grid-template-columns: 1fr 3fr;
+                                                        grid-template-rows: auto auto auto;
+                                                        gap: 1vb;
+                                                    }
+                                                    
+                                                    #contact .radio-label {
+                                                        place-self: center start;
+                                                        line-height: 1.5;
+                                                        font-size: 1rem;
+                                                        font-family: var(--regfont);
+                                                        font-variant-caps: normal;
+                                                        font-weight: 300;
+                                                    }
+                                                    
+                                                    #contact input[type="submit"] {
+                                                        background-color: var(--purple);
+                                                        color: var(--white);
+                                                        font-family: var(--regfont);
+                                                        font-variant-caps: all-small-caps;
+                                                        font-size: 1.3rem;
+                                                        font-weight: bold;
+                                                    }
+                                                    /* Footer */
+                                                    
+                                                    footer {
+                                                        display: grid;
+                                                        background-color: var(--light-gray);
+                                                        text-align: center;
+                                                        grid-template-columns: 1fr;
+                                                        grid-gap: 20px;
+                                                        padding: 30px 0px 30px 0px;
+                                                    }
+                                                    
+                                                    footer a {
+                                                        font-family: "Montserrat";
+                                                        color: var(--black);
+                                                        text-decoration: none;
+                                                    }
+                                                    
+                                                    @media screen and (min-width: 768px) {
+                                                        header {
+                                                            display: grid;
+                                                            grid-template-columns: 1fr 2fr;
+                                                            grid-template-rows: 3fr 1fr 2fr;
+                                                            grid-template-areas: "logo head" "logo text" "nav nav";
+                                                        }
+                                                        header h1 {
+                                                            font-size: 400;
+                                                        }
+                                                        header p {
+                                                            grid-row: 1;
+                                                            grid-column: 2;
+                                                            padding-top: 100px;
+                                                            margin-left: -80px;
+                                                        }
+                                                        #logo {
+                                                            grid-area: logo;
+                                                            place-self: left;
+                                                        }
+                                                        #logo img {
+                                                            max-width: 100%;
+                                                            min-width: 15em;
+                                                        }
+                                                        nav label {
+                                                            display: none;
+                                                        }
+                                                        nav {
+                                                            grid-area: nav;
+                                                            position: relative;
+                                                            top: -3em;
+                                                            place-self: start;
+                                                        }
+                                                        #menu-toggle {
+                                                            background-color: unset;
+                                                        }
+                                                        #menu-toggle input {
+                                                            padding: 0;
+                                                            width: 0;
+                                                        }
+                                                        #menu-toggle label {
+                                                            display: none;
+                                                        }
+                                                        #menu-toggle ul {
+                                                            display: grid;
+                                                            grid-template-columns: repeat(4, auto);
+                                                            grid-template-rows: auto;
+                                                            gap: 1vb;
+                                                            width: 60%;
+                                                            background-color: unset;
+                                                            padding: 0;
+                                                        }
+                                                        #menu-toggle li {
+                                                            background-color: var(--white);
+                                                            text-align: center;
+                                                            width: 25vb;
+                                                            height: auto;
+                                                            margin: 0 5px;
+                                                            padding: 2vb 0vb;
+                                                            place-self: center;
+                                                            color: var(--black);
+                                                        }
+                                                        #menu-toggle li:hover,
+                                                        #menu-toggle li:focus,
+                                                        #menu-toggle li a:hover,
+                                                        #menu-toggle li a:focus {
+                                                            background-color: var(--yellow);
+                                                            color: var(--white);
+                                                            border: 1px var(--yellow) solid;
+                                                        }
+                                                        #intro p {
+                                                            font-family: var(--regfont);
+                                                            font-size: 1rem;
+                                                            line-height: 150%;
+                                                        }
+                                                        #img-grid {
+                                                            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                                                            grid-template-rows: 2;
+                                                            gap: 10px;
+                                                        }
+                                                        #img-grid picture {
+                                                            grid-row: 2;
+                                                            grid-column: 1 / span 2;
+                                                        }
+                                                        #img-grid img:first-of-type {
+                                                            grid-column: 1;
+                                                            grid-row: 1;
+                                                        }
+                                                        #img-grid img:last-of-type {
+                                                            grid-column: 2;
+                                                            grid-row: 1;
+                                                        }
+                                                        #plan div {
+                                                            display: grid;
+                                                            grid-template-columns: repeat(2, auto);
+                                                            grid-template-rows: repeat(2, auto);
+                                                        }
+                                                        #plan div section {
+                                                            display: grid;
+                                                            background-color: var(--teal);
+                                                            grid-template-columns: 1fr;
+                                                            grid-template-rows: auto;
+                                                            place-self: center;
+                                                            border: var(--white) solid;
+                                                        }
+                                                        #testimonials div {
+                                                            display: grid;
+                                                            grid-template-columns: 1fr 1fr;
+                                                            grid-template-rows: auto auto;
+                                                        }
+                                                        #testimonials section {
+                                                            display: grid;
+                                                            grid-template-rows: auto repeat(3, auto);
+                                                            grid-template-columns: auto;
+                                                        }
+                                                        #about div {
+                                                            display: grid;
+                                                            grid-template-columns: repeat(4, auto);
+                                                            gap: 1vb;
+                                                            grid-template-rows: auto auto;
+                                                        }
+                                                        #about section {
+                                                            display: grid;
+                                                            grid-template-columns: auto;
+                                                            grid-template-rows: 2fr 0.5fr 0.5fr;
+                                                        }
+                                                        #about img {
+                                                            place-self: center;
+                                                            width: 45%;
+                                                            padding-bottom: 1vw;
+                                                        }
+                                                        footer {
+                                                            display: grid;
+                                                            grid-template-columns: 2fr repeat(2, 1fr);
+                                                            grid-template-rows: 1fr;
+                                                        }
+                                                        footer a {
+                                                            grid-column: 2;
+                                                        }
+                                                        footer a:last-of-type {
+                                                            grid-column: 3;
+                                                        }
+                                                        @media screen and (min-width: 980px) {
+                                                            /* HEADER */
+                                                            header {
+                                                                display: grid;
+                                                                grid-template-columns: 1fr 1fr 1fr 1fr;
+                                                            }
+                                                            #logo {
+                                                                grid-column: 1;
+                                                            }
+                                                            h1,
+                                                            header p {
+                                                                grid-column: 2;
+                                                            }
+                                                            nav #menu-toggle {
+                                                                grid-column: 4;
+                                                            }
+                                                            /* INTRO */
+                                                            #intro {
+                                                                margin: 50px;
+                                                                display: grid;
+                                                                grid-template-columns: 1fr 1fr;
+                                                            }
+                                                            #intro h2,
+                                                            p {
+                                                                grid-column: 1;
+                                                            }
+                                                            #img-grid {
+                                                                grid-column: 2;
+                                                            }
+                                                            /* CONTACT */
+                                                            #contact div {
+                                                                grid-template-columns: 1fr 1fr 1fr;
+                                                            }
+                                                            #names label,
+                                                            #names input {
+                                                                grid-column: 1;
+                                                            }
+                                                            #nums label,
+                                                            #nums input,
+                                                            #mySubmit {
+                                                                grid-column: 2;
+                                                            }
+                                                            #selects label,
+                                                            #selects div {
+                                                                grid-column: 3;
+                                                            }
+                                                            /* FOOTER */
+                                                            footer {
+                                                                display: grid;
+                                                                grid-template-columns: 1fr 1fr 1fr 1fr;
+                                                            }
+                                                            footer a {
+                                                                grid-column: 3;
+                                                            }
+                                                            footer a:last-of-type {
+                                                                grid-column: 4;
+                                                            }
+                                                        }
+                                                    }
+                                                    
+                                                    @media only screen and (min-width: 1200px) {
+                                                        header {
+                                                            display: grid;
+                                                            grid-template-columns: 1fr 1fr 1fr 1fr;
+                                                            grid-template-rows: 2fr 1fr;
+                                                            grid-template-areas: "logo head nav" "logo text .";
+                                                        }
+                                                        #logo {
+                                                            grid-area: logo;
+                                                            place-self: auto;
+                                                        }
+                                                        #logo img {
+                                                            max-width: 50%;
+                                                            min-width: 25em;
+                                                        }
+                                                        header h1 {
+                                                            margin-left: -55px;
+                                                        }
+                                                        h1 {
+                                                            grid-area: head;
+                                                            font-family: var(--fancyfont);
+                                                            font-size: 3rem;
+                                                        }
+                                                        header p {
+                                                            font-family: var(--regfont);
+                                                            font-size: 1.2rem;
+                                                            padding-left: 20px;
+                                                        }
+                                                        nav {
+                                                            grid-area: nav;
+                                                            position: relative;
+                                                            top: -2.5em;
+                                                            place-self: start;
+                                                        }
+                                                        #plan div {
+                                                            display: grid;
+                                                            max-width: auto;
+                                                            grid-template-columns: repeat(4, 1fr);
+                                                            grid-template-rows: 1fr;
+                                                        }
+                                                        #plan div section {
+                                                            display: grid;
+                                                            background-color: var(--teal);
+                                                            grid-template-columns: auto;
+                                                            grid-template-rows: auto auto;
+                                                            border: 5px var(--white) solid;
+                                                            width: 75%;
+                                                            height: 85%;
+                                                        }
+                                                        #plan h3 {
+                                                            font-family: var(--fancyfont);
+                                                            font-size: 2.3rem;
+                                                            text-align: left;
+                                                        }
+                                                        #testimonials div {
+                                                            display: grid;
+                                                            max-width: 95%;
+                                                            grid-template-columns: repeat(4, 1fr);
+                                                            grid-template-rows: auto;
+                                                        }
+                                                        #testimonials section {
+                                                            display: grid;
+                                                            grid-template-rows: repeat(3, 0.20fr);
+                                                            grid-template-columns: auto;
+                                                        }
+                                                        #contact div {
+                                                            display: grid;
+                                                            grid-template-columns: 1fr 1fr 1fr;
+                                                            grid-template-rows: 1;
+                                                        }
+                                                        #names label,
+                                                        #names input {
+                                                            grid-column: 1;
+                                                            grid-row: 1;
+                                                        }
+                                                        #nums label,
+                                                        #nums input,
+                                                        #mySubmit {
+                                                            grid-column: 2;
+                                                            grid-row: 1;
+                                                        }
+                                                        #selects label,
+                                                        #selects div {
+                                                            grid-column: 3;
+                                                            grid-row: 1;
+                                                        }
+                                                    }
